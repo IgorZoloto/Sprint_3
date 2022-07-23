@@ -1,4 +1,5 @@
 import io.qameta.allure.Allure;
+import io.restassured.RestAssured;
 
 public class TestBase {
 

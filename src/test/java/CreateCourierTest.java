@@ -7,22 +7,16 @@ import model.Courier;
 import model.LoginCourier;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.File;
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
 
 public class CreateCourierTest extends TestBase {
 
-
     @Before
     public void setUp() {
         RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
     }
-
-
-
 
     @Test
     @DisplayName("Check creating courier")
@@ -32,7 +26,6 @@ public class CreateCourierTest extends TestBase {
         //Проверка создания курьера
         step("Создание курьера");
         Courier courier = Courier.getRandom();
-
 
         Boolean create =
 
@@ -48,8 +41,6 @@ public class CreateCourierTest extends TestBase {
                         .extract()
                         .path("ok");
         assertTrue(create);
-
-
 
         //Проверка логина курьера и получение id
 
@@ -69,7 +60,6 @@ public class CreateCourierTest extends TestBase {
                 .then().assertThat().statusCode(200); // проверка, что сервер вернул код 200
 
     }
-
 
     @Test
     @DisplayName("Check not creating double courier")

@@ -24,9 +24,8 @@ public class LoginCourierTest extends TestBase {
     public void checkSuccessLoginCourierTest() {
 
         step("Подготовка тестовых данных");
-        //Проверка созжания курьера
+        //Проверка создания курьера
         Courier courier = Courier.getRandom();
-        // Response responseCreate = courierClient.createCourier(courier); //Создание курьера
 
         Boolean create =
 
